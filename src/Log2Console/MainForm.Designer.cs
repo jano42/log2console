@@ -117,6 +117,7 @@ namespace Log2Console
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteAllLoggerTreeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripLabelTimeDiff = new System.Windows.Forms.ToolStripLabel();
             this.logListView = new Log2Console.UI.FlickerFreeListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -126,6 +127,7 @@ namespace Log2Console
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.mainToolStrip.SuspendLayout();
             this.loggerPanel.SuspendLayout();
             this.loggerInnerPanel.SuspendLayout();
@@ -176,7 +178,9 @@ namespace Log2Console
             this.aboutBtn,
             this.toolStripSeparator12,
             this.pinOnTopBtn,
-            this.versionLabel});
+            this.versionLabel,
+            this.toolStripSeparator17,
+            this.toolStripLabelTimeDiff});
             this.mainToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
@@ -325,6 +329,7 @@ namespace Log2Console
             // 
             // searchTextBox
             // 
+            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 24);
@@ -915,6 +920,12 @@ namespace Log2Console
             this.openFileDialog1.Filter = "CSV file|*.csv|All files|*.*";
             this.openFileDialog1.Title = "Open Log File";
             // 
+            // toolStripLabelTimeDiff
+            // 
+            this.toolStripLabelTimeDiff.Name = "toolStripLabelTimeDiff";
+            this.toolStripLabelTimeDiff.Size = new System.Drawing.Size(16, 22);
+            this.toolStripLabelTimeDiff.Text = "...";
+            // 
             // logListView
             // 
             this.logListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -979,6 +990,11 @@ namespace Log2Console
             // 
             this.columnHeader5.Text = "Message";
             this.columnHeader5.Width = 540;
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 25);
             // 
             // MainForm
             // 
@@ -1118,6 +1134,8 @@ namespace Log2Console
         private ToolStripButton dactivateSourcesBtn;
         private ToolStripButton collapseAllBtn;
         private ToolStripButton keepHighlightBtn;
+        private ToolStripLabel toolStripLabelTimeDiff;
+        private ToolStripSeparator toolStripSeparator17;
     }
 }
 

@@ -687,14 +687,36 @@ namespace Log2Console
         {
             RemovedLoggerHighlight();
 
+            toolStripLabelTimeDiff.Text = "";
+
             LogMessageItem logMsgItem = null;
             if (logListView.SelectedItems.Count > 0)
                 logMsgItem = logListView.SelectedItems[0].Tag as LogMessageItem;
 
             SetLogMessageDetail(logMsgItem);
 
-            // Highlight Logger in the Tree View
-            if ((logMsgItem != null) && (UserSettings.Instance.HighlightLogger))
+            if (logListView.SelectedItems.Count == 2)
+            {
+                var first = logListView.SelectedItems[0].Tag as LogMessageItem;
+                var last = logListView.SelectedItems[1].Tag as LogMessageItem;
+
+                if (first != null && first.Message != null && last != null && last.Message != null)
+                {
+                    if (first.Message.TimeStamp < last.Message.TimeStamp)
+                    {
+                        toolStripLabelTimeDiff.Text = $@"Diff= {(last.Message.TimeStamp - first.Message.TimeStamp).TotalMilliseconds} ms";
+                    }
+                    else
+                    {
+                        toolStripLabelTimeDiff.Text = $@"Diff= {(first.Message.TimeStamp - last.Message.TimeStamp).TotalMilliseconds} ms";
+                    }
+                }
+
+
+            }
+
+                // Highlight Logger in the Tree View
+                if ((logMsgItem != null) && (UserSettings.Instance.HighlightLogger))
             {
                 logMsgItem.Parent.Highlight = true;
                 _lastHighlightedLogger = logMsgItem.Parent;
