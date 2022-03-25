@@ -144,7 +144,7 @@ namespace Log2Console
                 var formatDateTime = new NumberingFormat
                 {
                     NumberFormatId = 2,
-                    FormatCode = StringValue.FromString($"dd/mm/yyyy hh:mm:ss{System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator}000")
+                    FormatCode = StringValue.FromString($"dd/mm/yyyy hh:mm:ss.000")
                 }; 
                 stylesPart.Stylesheet.NumberingFormats.AppendChild(formatDateTime);
                 stylesPart.Stylesheet.NumberingFormats.Count = 1;
