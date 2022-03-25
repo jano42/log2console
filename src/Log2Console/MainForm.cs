@@ -1221,16 +1221,13 @@ namespace Log2Console
         private void saveBtn_Click(object sender, EventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "csv files (*.csv)|*.csv";
+            dlg.Filter = "Excel files (*.xlsx)|*.xlsx";
             dlg.FileName = "logs";
             dlg.Title = "Export to Excel";
             if (dlg.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
             utils.Export2Excel(logListView, dlg.FileName);
-
-
-
         }
 
 
